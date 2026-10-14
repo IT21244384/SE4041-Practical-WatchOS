@@ -36,8 +36,19 @@ final class QuickTasksUITests: XCTestCase {
         XCTFail("Could not scroll to \(target)", file: file, line: line)
     }
 
+    /// Scrolls until the summary sits fully below the navigation title (the true top of the list).
     private func scrollToTop() {
-        reveal(element("completedCount"))
+        let summary = element("completedCount")
+        let title = app.navigationBars.firstMatch
+        func atTop() -> Bool {
+            summary.exists && title.exists && summary.frame.minY >= title.frame.maxY - 1
+        }
+        for direction in [-1.0, 1.0] {
+            for _ in 0..<12 {
+                if atTop() { return }
+                XCUIDevice.shared.rotateDigitalCrown(delta: 0.3 * direction)
+            }
+        }
     }
 
     /// Reads the completion count (scrolling back to the top of the list where it lives).
