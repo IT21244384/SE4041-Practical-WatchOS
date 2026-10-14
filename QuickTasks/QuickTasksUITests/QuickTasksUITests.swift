@@ -23,19 +23,20 @@ final class QuickTasksUITests: XCTestCase {
     /// exists and can be tapped - first downwards through the list, then back up.
     private func reveal(_ target: XCUIElement, file: StaticString = #filePath, line: UInt = #line) {
         if target.waitForExistence(timeout: 2) && target.isHittable { return }
-        for _ in 0..<8 {
-            app.swipeUp()
+        for _ in 0..<12 {
+            app.swipeUp(velocity: .slow)
             if target.exists && target.isHittable { return }
         }
-        for _ in 0..<14 {
-            app.swipeDown()
+        for _ in 0..<20 {
+            app.swipeDown(velocity: .slow)
             if target.exists && target.isHittable { return }
         }
+        print("UI HIERARCHY:\n\(app.debugDescription)")
         XCTFail("Could not scroll to \(target)", file: file, line: line)
     }
 
     private func scrollToTop() {
-        for _ in 0..<5 { app.swipeDown() }
+        for _ in 0..<8 { app.swipeDown(velocity: .slow) }
     }
 
     /// Reads the completion count (scrolling back to the top of the list where it lives).
