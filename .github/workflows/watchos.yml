@@ -1,0 +1,106 @@
+name: Build, test and capture Apple Watch Simulator screenshots
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  watchos:
+    runs-on: macos-15
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show Xcode version and runtimes
+        run: |
+          xcodebuild -version
+          xcrun simctl list runtimes
+
+      - name: Generate Xcode project
+        working-directory: QuickTasks
+        run: |
+          brew install xcodegen
+          xcodegen generate
+
+      - name: Choose two Apple Watch Simulator sizes
+        run: |
+          xcrun simctl list devices available -j | python3 -c '
+          import json, sys
+          devices = json.load(sys.stdin)["devices"]
+          watch = sorted((k for k in devices if "watchOS" in k), reverse=True)
+          if not watch:
+              sys.exit("No watchOS simulator runtime installed")
+          available = [d for d in devices[watch[0]]]
+          series = [d for d in available if "Series" in d["name"]]
+          ultra = [d for d in available if "Ultra" in d["name"]]
+          picks = []
+          if series: picks.append(series[0])
+          if ultra: picks.append(ultra[0])
+          for d in available:
+              if len(picks) >= 2: break
+              if d not in picks: picks.append(d)
+          with open("watches.txt", "w") as f:
+              for d in picks[:2]:
+                  f.write(d["udid"] + "|" + d["name"] + "\n")
+          '
+          cat watches.txt
+
+      - name: Build app and run UI tests on each watch size
+        working-directory: QuickTasks
+        run: |
+          set -o pipefail
+          first=1
+          while IFS="|" read -r UDID NAME; do
+            if [ "$first" = 1 ]; then
+              DIR="$GITHUB_WORKSPACE/screenshots"
+            else
+              DIR="$GITHUB_WORKSPACE/screenshots/$(echo "$NAME" | tr -cs 'A-Za-z0-9' '-' | sed 's/-$//')"
+            fi
+            mkdir -p "$DIR"
+            echo "=== Testing on $NAME ($UDID) -> $DIR"
+
+            xcrun simctl boot "$UDID" || true
+            xcrun simctl bootstatus "$UDID" -b
+            xcrun simctl status_bar "$UDID" override --time "9:41" || true
+
+            # Take a Simulator screenshot whenever the UI test asks for one
+            (
+              while true; do
+                for request in "$DIR"/request-*; do
+                  [ -e "$request" ] || continue
+                  shot="${request##*/request-}"
+                  xcrun simctl io "$UDID" screenshot "$DIR/.tmp-$shot.png" && mv "$DIR/.tmp-$shot.png" "$DIR/$shot.png"
+                  rm -f "$request"
+                done
+                sleep 0.3
+              done
+            ) &
+            WATCHER=$!
+
+            TEST_RUNNER_SCREENSHOT_DIR="$DIR" \
+            xcodebuild test \
+              -project QuickTasks.xcodeproj \
+              -scheme QuickTasks \
+              -destination "id=$UDID" \
+              -resultBundlePath "$GITHUB_WORKSPACE/TestResults-$first.xcresult" \
+              CODE_SIGNING_ALLOWED=NO < /dev/null \
+              | tee -a "$GITHUB_WORKSPACE/xcodebuild.log" | grep -E "error:|Test Case|Executed|\*\* (BUILD|TEST)" || STATUS=$?
+
+            kill "$WATCHER" || true
+            ls -la "$DIR"
+            [ -z "${STATUS:-}" ] || exit "$STATUS"
+            first=0
+          done < "$GITHUB_WORKSPACE/watches.txt"
+
+      - name: Upload Xcode project, screenshots and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: watchos-output
+          path: |
+            QuickTasks/QuickTasks.xcodeproj
+            screenshots
+            watches.txt
+            xcodebuild.log
+          if-no-files-found: warn

@@ -1167,3 +1167,37 @@ and
 
 You have practised compact SwiftUI layouts, state, buttons, symbols, lists, navigation, and task completion on Apple Watch. A future extension is **iPhone ↔ Apple Watch communication using WatchConnectivity**.
 
+
+---
+
+## Student Submission
+
+| | |
+|---|---|
+| **Student Name** | Abisheak S |
+| **Student ID** | IT21244384 |
+| **App** | `QuickTasks/` – Quick Tasks, a Watch-only SwiftUI app (watchOS 10+) |
+| **Additional feature (Part G)** | Option B – progress percentage (with a progress bar). Option A – Reset Tasks is also included. |
+
+### Project contents
+
+| Path | Content |
+|---|---|
+| `QuickTasks/QuickTasks.xcodeproj` | Xcode project – open in Xcode, choose an Apple Watch Simulator and press Run |
+| `QuickTasks/QuickTasks/QuickTasksApp.swift` | App entry point (`@main`, `WindowGroup`) |
+| `QuickTasks/QuickTasks/ContentView.swift` | Final task – completion count, progress, tap-to-complete rows, separate Details rows, Reset |
+| `QuickTasks/QuickTasks/TaskItem.swift` | `TaskItem` model (`Identifiable`) |
+| `QuickTasks/QuickTasks/TaskDetailView.swift` | Detail screen with title, status and SF Symbol |
+| `QuickTasks/QuickTasks/Exercises/` | Exercises 01–08 as separate views with previews, plus Knowledge Check answers |
+| `QuickTasks/QuickTasksUITests/` | UI tests covering Tests 1–5 and the reset feature |
+| `QuickTasks/project.yml` | XcodeGen spec the project was generated from |
+
+### Environment
+
+The code was written on Windows. It was built with Xcode and run in the Apple Watch Simulator on a macOS runner (GitHub Actions, `.github/workflows/watchos.yml`). The UI tests tap through the app on two watch sizes (Test 6), and the screenshots are taken from the Simulator with `xcrun simctl io screenshot`.
+
+## My Practical Evidence
+
+![Main screen](screenshots/01-Main-Screen.png)
+![Completed tasks](screenshots/02-Completed-Tasks.png)
+![Task detail](screenshots/03-Task-Detail.png)
