@@ -25,7 +25,7 @@ struct ContentView: View {
         // Part C - Main screen
         NavigationStack {
             List {
-                VStack(spacing: 4) {
+                VStack(spacing: 3) {
                     Text("\(completedCount) / \(tasks.count) Completed")
                         .font(.headline)
                         .accessibilityIdentifier("completedCount")
@@ -40,9 +40,10 @@ struct ContentView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .listRowBackground(Color.clear)
+                .listRowInsets(EdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 4))
 
                 // Part D - Tapping a task row toggles its status
-                Section("Tap to complete") {
+                Section {
                     ForEach($tasks) { $task in
                         Button {
                             task.completed.toggle()
@@ -57,6 +58,8 @@ struct ContentView: View {
                         .accessibilityIdentifier("toggle-\(task.title)")
                         .accessibilityValue(task.completed ? "Completed" : "Pending")
                     }
+                } footer: {
+                    Text("Tap a task to mark it done")
                 }
 
                 // Part F - Separate rows open the details (no button inside a NavigationLink)
@@ -82,6 +85,7 @@ struct ContentView: View {
                 .accessibilityIdentifier("resetButton")
             }
             .navigationTitle("Quick Tasks")
+            .environment(\.defaultMinListRowHeight, 40)
         }
     }
 }

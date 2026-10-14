@@ -25,11 +25,11 @@ final class QuickTasksUITests: XCTestCase {
         if target.waitForExistence(timeout: 2) && target.isHittable { return }
         // Turn the Digital Crown in small steps (a swipe flings the whole list on this small screen)
         for _ in 0..<15 {
-            XCUIDevice.shared.rotateDigitalCrown(delta: 0.15, velocity: .slow)
+            XCUIDevice.shared.rotateDigitalCrown(delta: 0.2)
             if target.exists && target.isHittable { return }
         }
         for _ in 0..<30 {
-            XCUIDevice.shared.rotateDigitalCrown(delta: -0.15, velocity: .slow)
+            XCUIDevice.shared.rotateDigitalCrown(delta: -0.2)
             if target.exists && target.isHittable { return }
         }
         print("UI HIERARCHY:\n\(app.debugDescription)")
@@ -79,7 +79,10 @@ final class QuickTasksUITests: XCTestCase {
         } else {
             app.swipeRight()
         }
-        XCTAssertTrue(element("completedCount").waitForExistence(timeout: 5))
+        // The list keeps its scroll position, so wait for the detail screen to close instead
+        let closed = NSPredicate(format: "exists == false")
+        expectation(for: closed, evaluatedWith: element("detailStatus"))
+        waitForExpectations(timeout: 5)
     }
 
     /// Asks the host Mac to screenshot the Simulator and waits until the file exists.
