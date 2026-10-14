@@ -23,12 +23,13 @@ final class QuickTasksUITests: XCTestCase {
     /// exists and can be tapped - first downwards through the list, then back up.
     private func reveal(_ target: XCUIElement, file: StaticString = #filePath, line: UInt = #line) {
         if target.waitForExistence(timeout: 2) && target.isHittable { return }
-        for _ in 0..<12 {
-            app.swipeUp(velocity: .slow)
+        // Turn the Digital Crown in small steps (a swipe flings the whole list on this small screen)
+        for _ in 0..<15 {
+            XCUIDevice.shared.rotateDigitalCrown(delta: 0.15, velocity: .slow)
             if target.exists && target.isHittable { return }
         }
-        for _ in 0..<20 {
-            app.swipeDown(velocity: .slow)
+        for _ in 0..<30 {
+            XCUIDevice.shared.rotateDigitalCrown(delta: -0.15, velocity: .slow)
             if target.exists && target.isHittable { return }
         }
         print("UI HIERARCHY:\n\(app.debugDescription)")
@@ -36,7 +37,7 @@ final class QuickTasksUITests: XCTestCase {
     }
 
     private func scrollToTop() {
-        for _ in 0..<8 { app.swipeDown(velocity: .slow) }
+        reveal(element("completedCount"))
     }
 
     /// Reads the completion count (scrolling back to the top of the list where it lives).
