@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		285C462232FF133EBB7DB85F /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B6CE7AE49016DE181FF90B /* TaskItem.swift */; };
+		37AA4F1F40EA13636A346FA0 /* Exercise05_08View.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87DD93CDB30512AECA3C51D /* Exercise05_08View.swift */; };
+		390AFBD3519E8C2E55FBCABE /* Exercise01_04View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C618B574C77279E216AA8 /* Exercise01_04View.swift */; };
+		54E73C9A67604BD6B27BDF48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9D7B0B1C52D478148A8621 /* Assets.xcassets */; };
+		8E6CB6CE1B6C52B87425578B /* QuickTasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD0653F0712D35972465D6 /* QuickTasksUITests.swift */; };
+		D010EE345CF2BAEF53610106 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E57A1DC3A661010C41528B1 /* ContentView.swift */; };
+		E52617CE541534B22D7403EB /* QuickTasksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC77C2BD6E83C803EE2FC5C /* QuickTasksApp.swift */; };
+		F9A80C956633B4076FD571EE /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8BC3C4CCFFE6725B03BB2 /* TaskDetailView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		54651025EA86C8CC10A95183 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78634C642A9718905C0B9E34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E3B7C1996A2CA6E913BD980;
+			remoteInfo = QuickTasks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1DE8BC3C4CCFFE6725B03BB2 /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
+		30DD0653F0712D35972465D6 /* QuickTasksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTasksUITests.swift; sourceTree = "<group>"; };
+		3DC77C2BD6E83C803EE2FC5C /* QuickTasksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTasksApp.swift; sourceTree = "<group>"; };
+		78B5C2F76B34C188F95C1481 /* QuickTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E57A1DC3A661010C41528B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7F9D7B0B1C52D478148A8621 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		90B6CE7AE49016DE181FF90B /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
+		C4AF368914896A80A46DB6EF /* QuickTasksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickTasksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C87DD93CDB30512AECA3C51D /* Exercise05_08View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise05_08View.swift; sourceTree = "<group>"; };
+		CE0C618B574C77279E216AA8 /* Exercise01_04View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise01_04View.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		2849535748100468BCC01B9D /* QuickTasks */ = {
+			isa = PBXGroup;
+			children = (
+				7F9D7B0B1C52D478148A8621 /* Assets.xcassets */,
+				7E57A1DC3A661010C41528B1 /* ContentView.swift */,
+				3DC77C2BD6E83C803EE2FC5C /* QuickTasksApp.swift */,
+				1DE8BC3C4CCFFE6725B03BB2 /* TaskDetailView.swift */,
+				90B6CE7AE49016DE181FF90B /* TaskItem.swift */,
+				52463069095B359524E69EA3 /* Exercises */,
+			);
+			path = QuickTasks;
+			sourceTree = "<group>";
+		};
+		2D79EE306DC73679884D23F7 /* QuickTasksUITests */ = {
+			isa = PBXGroup;
+			children = (
+				30DD0653F0712D35972465D6 /* QuickTasksUITests.swift */,
+			);
+			path = QuickTasksUITests;
+			sourceTree = "<group>";
+		};
+		52463069095B359524E69EA3 /* Exercises */ = {
+			isa = PBXGroup;
+			children = (
+				CE0C618B574C77279E216AA8 /* Exercise01_04View.swift */,
+				C87DD93CDB30512AECA3C51D /* Exercise05_08View.swift */,
+			);
+			path = Exercises;
+			sourceTree = "<group>";
+		};
+		AD2D9A61087E52676AFB85FA = {
+			isa = PBXGroup;
+			children = (
+				2849535748100468BCC01B9D /* QuickTasks */,
+				2D79EE306DC73679884D23F7 /* QuickTasksUITests */,
+				FD5337CCC041C83B72CC3C4C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD5337CCC041C83B72CC3C4C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78B5C2F76B34C188F95C1481 /* QuickTasks.app */,
+				C4AF368914896A80A46DB6EF /* QuickTasksUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E3B7C1996A2CA6E913BD980 /* QuickTasks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF6B78AE2F0A35C9DB9D56C3 /* Build configuration list for PBXNativeTarget "QuickTasks" */;
+			buildPhases = (
+				68A488F56F1123993EC7FA35 /* Sources */,
+				360C9863D20F4EFFE315157F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickTasks;
+			packageProductDependencies = (
+			);
+			productName = QuickTasks;
+			productReference = 78B5C2F76B34C188F95C1481 /* QuickTasks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A8FE3A3F87FEADCE8532FDD7 /* QuickTasksUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29F33F9BD462480A420FF04A /* Build configuration list for PBXNativeTarget "QuickTasksUITests" */;
+			buildPhases = (
+				BAFB17CD2F2EA76138C2690F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27E60BE3F1D00FAFCB00AF67 /* PBXTargetDependency */,
+			);
+			name = QuickTasksUITests;
+			packageProductDependencies = (
+			);
+			productName = QuickTasksUITests;
+			productReference = C4AF368914896A80A46DB6EF /* QuickTasksUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78634C642A9718905C0B9E34 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2E3B7C1996A2CA6E913BD980 = {
+						ProvisioningStyle = Automatic;
+					};
+					A8FE3A3F87FEADCE8532FDD7 = {
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2E3B7C1996A2CA6E913BD980;
+					};
+				};
+			};
+			buildConfigurationList = 948A4D096229F08D40813883 /* Build configuration list for PBXProject "QuickTasks" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = AD2D9A61087E52676AFB85FA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = FD5337CCC041C83B72CC3C4C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E3B7C1996A2CA6E913BD980 /* QuickTasks */,
+				A8FE3A3F87FEADCE8532FDD7 /* QuickTasksUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		360C9863D20F4EFFE315157F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54E73C9A67604BD6B27BDF48 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68A488F56F1123993EC7FA35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D010EE345CF2BAEF53610106 /* ContentView.swift in Sources */,
+				390AFBD3519E8C2E55FBCABE /* Exercise01_04View.swift in Sources */,
+				37AA4F1F40EA13636A346FA0 /* Exercise05_08View.swift in Sources */,
+				E52617CE541534B22D7403EB /* QuickTasksApp.swift in Sources */,
+				F9A80C956633B4076FD571EE /* TaskDetailView.swift in Sources */,
+				285C462232FF133EBB7DB85F /* TaskItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAFB17CD2F2EA76138C2690F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E6CB6CE1B6C52B87425578B /* QuickTasksUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27E60BE3F1D00FAFCB00AF67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E3B7C1996A2CA6E913BD980 /* QuickTasks */;
+			targetProxy = 54651025EA86C8CC10A95183 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		017179EDBE77AE821FEA5572 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		3CB81A0EE3C20A8576008330 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lk.ac.sliit.QuickTasks.watchkitapp.UITests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = QuickTasks;
+			};
+			name = Debug;
+		};
+		6D3940665C4BC2D598B960C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Quick Tasks";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKApplication = YES;
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = lk.ac.sliit.QuickTasks.watchkitapp;
+				PRODUCT_NAME = QuickTasks;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		D45AF61DCD000EE3F36F0B5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Quick Tasks";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKApplication = YES;
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = lk.ac.sliit.QuickTasks.watchkitapp;
+				PRODUCT_NAME = QuickTasks;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Release;
+		};
+		E47F7CD6A79E5C2FC675C434 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		EF5CA3DCB960E72ECB5CCD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lk.ac.sliit.QuickTasks.watchkitapp.UITests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = QuickTasks;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29F33F9BD462480A420FF04A /* Build configuration list for PBXNativeTarget "QuickTasksUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CB81A0EE3C20A8576008330 /* Debug */,
+				EF5CA3DCB960E72ECB5CCD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		948A4D096229F08D40813883 /* Build configuration list for PBXProject "QuickTasks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				017179EDBE77AE821FEA5572 /* Debug */,
+				E47F7CD6A79E5C2FC675C434 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AF6B78AE2F0A35C9DB9D56C3 /* Build configuration list for PBXNativeTarget "QuickTasks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D3940665C4BC2D598B960C6 /* Debug */,
+				D45AF61DCD000EE3F36F0B5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 78634C642A9718905C0B9E34 /* Project object */;
+}

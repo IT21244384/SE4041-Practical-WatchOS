@@ -1040,6 +1040,9 @@ After adding the files, you can embed them in your repository README:
 ![Main screen](screenshots/01-Main-Screen.png)
 ![Completed tasks](screenshots/02-Completed-Tasks.png)
 ![Task detail](screenshots/03-Task-Detail.png)
+![Task detail after changing status](screenshots/04-Task-Detail-Pending.png)
+
+UI test run on the Apple Watch Series 11 (46mm) and Apple Watch Ultra 3 (49mm) Simulators (watchOS 26.2): 2 tests, 0 failures on each size - covering Tests 1-6 and Reset. The Ultra screenshots are in `screenshots/Apple-Watch-Ultra-3-49mm/`.
 ```
 
 ---
@@ -1201,3 +1204,6 @@ The code was written on Windows. It was built with Xcode and run in the Apple Wa
 ![Main screen](screenshots/01-Main-Screen.png)
 ![Completed tasks](screenshots/02-Completed-Tasks.png)
 ![Task detail](screenshots/03-Task-Detail.png)
+![Task detail after changing status](screenshots/04-Task-Detail-Pending.png)
+
+UI test run on the Apple Watch Series 11 (46mm) and Apple Watch Ultra 3 (49mm) Simulators (watchOS 26.2): 2 tests, 0 failures on each size - covering Tests 1-6 and Reset. The Ultra screenshots are in `screenshots/Apple-Watch-Ultra-3-49mm/`.
