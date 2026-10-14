@@ -19,25 +19,42 @@ final class QuickTasksUITests: XCTestCase {
         app.descendants(matching: .any).matching(identifier: identifier).firstMatch
     }
 
-    private var countText: String { element("completedCount").label }
-
-    /// Scrolls the list until the element can be tapped.
-    private func reveal(_ target: XCUIElement) {
-        XCTAssertTrue(target.waitForExistence(timeout: 10))
-        var attempts = 0
-        while !target.isHittable && attempts < 6 {
+    /// watchOS lists only create the rows that are on screen, so scroll until the element
+    /// exists and can be tapped - first downwards through the list, then back up.
+    private func reveal(_ target: XCUIElement, file: StaticString = #filePath, line: UInt = #line) {
+        if target.waitForExistence(timeout: 2) && target.isHittable { return }
+        for _ in 0..<8 {
             app.swipeUp()
-            attempts += 1
+            if target.exists && target.isHittable { return }
         }
-        attempts = 0
-        while !target.isHittable && attempts < 6 {
+        for _ in 0..<14 {
             app.swipeDown()
-            attempts += 1
+            if target.exists && target.isHittable { return }
         }
+        XCTFail("Could not scroll to \(target)", file: file, line: line)
     }
 
     private func scrollToTop() {
-        for _ in 0..<4 { app.swipeDown() }
+        for _ in 0..<5 { app.swipeDown() }
+    }
+
+    /// Reads the completion count (scrolling back to the top of the list where it lives).
+    private var countText: String {
+        let label = element("completedCount")
+        reveal(label)
+        return label.label
+    }
+
+    private var percentText: String {
+        let label = element("progressPercent")
+        reveal(label)
+        return label.label
+    }
+
+    private func toggleValue(_ title: String) -> String? {
+        let button = element("toggle-\(title)")
+        reveal(button)
+        return button.value as? String
     }
 
     private func toggle(_ title: String) {
@@ -83,31 +100,33 @@ final class QuickTasksUITests: XCTestCase {
 
     func test1TasksToggleCountAndDetails() {
         // Test 1 - all four tasks appear, starting at 2 / 4
+        XCTAssertTrue(element("completedCount").waitForExistence(timeout: 10))
         for title in ["Morning Walk", "Drink Water", "Read Notes", "Call Home"] {
-            XCTAssertTrue(element("toggle-\(title)").waitForExistence(timeout: 10), title)
+            reveal(element("toggle-\(title)"))
         }
         XCTAssertEqual(countText, "2 / 4 Completed")
-        XCTAssertEqual(element("progressPercent").label, "50% Complete")
+        scrollToTop()
+        XCTAssertEqual(percentText, "50% Complete")
         requestScreenshot("01-Main-Screen")
 
         // Test 2 - tapping an incomplete task completes it
         toggle("Drink Water")
-        XCTAssertEqual(element("toggle-Drink Water").value as? String, "Completed")
+        XCTAssertEqual(toggleValue("Drink Water"), "Completed")
         XCTAssertEqual(countText, "3 / 4 Completed")
 
         // Test 3 - tapping it again returns it to incomplete
         toggle("Drink Water")
-        XCTAssertEqual(element("toggle-Drink Water").value as? String, "Pending")
+        XCTAssertEqual(toggleValue("Drink Water"), "Pending")
         XCTAssertEqual(countText, "2 / 4 Completed")
 
         // Test 4 - completing several tasks updates the count
         toggle("Drink Water")
         toggle("Read Notes")
         XCTAssertEqual(countText, "4 / 4 Completed")
-        XCTAssertEqual(element("progressPercent").label, "100% Complete")
+        XCTAssertEqual(percentText, "100% Complete")
         toggle("Read Notes")
         XCTAssertEqual(countText, "3 / 4 Completed")
-        XCTAssertEqual(element("progressPercent").label, "75% Complete")
+        XCTAssertEqual(percentText, "75% Complete")
         scrollToTop()
         requestScreenshot("02-Completed-Tasks")
 
@@ -135,6 +154,6 @@ final class QuickTasksUITests: XCTestCase {
         reset.tap()
 
         XCTAssertEqual(countText, "0 / 4 Completed")
-        XCTAssertEqual(element("progressPercent").label, "0% Complete")
+        XCTAssertEqual(percentText, "0% Complete")
     }
 }
